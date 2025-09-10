@@ -1,0 +1,52 @@
+[user]
+	name = Janik Stracke
+	email = j.stracke@itsmind.com
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCyvb24es7/RGMjZiq36k8l1mtJc+p7KzQi2guva8xV1TtRRXAvofT5xEjScY3LN8QuboA8lfL2mtlG5sCwc+4JKQ6ZtW79vIPfBp7pH89F6vdjRgoltQFNWm7yKi1e1FP8WVhyZB/OSP9YbRNOrKtyhp27TZBhKEwHGP22LBdMNPDtb9SHkxJl1pc43Recra8KviGGCCmo7W/Scl5sRHbRrHL+Vsqu31pS3tlHS+oelpVAecYtnbeHBR+C7oSB67kIt5gZEx/vDOXloZ0J8IfZhhyx0lJDRYZD+tHlzpTMF3QNyrZc/biVng+Eqj65PnmzQQEq2Yjb9IIAfQmNPb0X25gcdpaYtptRk599mMJnpLXj1zTlVlfsLBco7B/Yx9v7TTX4b8IUIWNqSw80AjKrFsOnG2iobtTCopJNedvELsphqzV47dQZ48ZAIBCcgtsYL/Ww2VR7JfmLgS/ZCh8TuLay+95uip8XdP/QwnnbuhNSQ9bFNabDni7BGXCzkKQPleMstqK1wZkO4mcZetkf+UY2cPeRobCZW1YHj0BO28LZBWy9C/yxneapcmPxfLMLsWWLPv+l63U91ISuBZW1C7lBGAzUAwzF8UpM4ivbPoYxfjpgS0vz/rpH/w3bl/elh85XaDC8e1ekNe81lVEmip2Bhr6/yQ0SxQAGLIm/tw==
+[core]
+  editor = vi
+  excludesfile = ~/.global_gitignore
+  autocrlf = input
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[init]
+  defaultBranch = main
+[web]
+  browser = brave
+# [credential]
+#   helper = osxkeychain
+[push]
+  default = simple
+[merge]
+  tool = kdiff3
+[difftool]
+  prompt = false
+[alias]
+  co = checkout
+	br = branch
+	c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -am
+  st = status
+	unstage = reset HEAD --
+  d = diff
+  dc = diff --cached
+  l = log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit
+	last = log -1 HEAD
+  lastchange = log -p --follow -n 1
+	graph = log --oneline --graph
+  permission-reset = !git diff -p -R --no-ext-diff --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

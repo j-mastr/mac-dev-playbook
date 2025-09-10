@@ -1,0 +1,83 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "telemetry.telemetryLevel": "off",
+  "git.autofetch": true,
+  "git.useEditorAsCommitInput": false,
+  "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.maxComputationTime": 10000,
+  "diffEditor.renderSideBySide": true,
+  "redhat.telemetry.enabled": false,
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDragAndDrop": false,
+  "hediet.vscode-drawio.theme": "Kennedy",
+  "notebook.output.scrolling": true,
+  "yaml.maxItemsComputed": 30000,
+  "laravel-pint.enable": true,
+  "php.suggest.basic": false,
+  "eslint.format.enable": true,
+  "eslint.useESLintClass": true,
+  "xml.format.splitAttributes": "alignWithFirstAttr",
+  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "window.autoDetectColorScheme": true,
+  "workbench.startupEditor": "none",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.preferredLightColorTheme": "Default Light Modern",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.colorCustomizations": {
+    "[Default Dark Modern]": {
+      "terminal.background": "#002833",
+      "terminal.foreground": "#839496",
+      "terminal.ansiBlack": "#003541",
+      "terminal.ansiBlue": "#268bd2",
+      "terminal.ansiBrightBlack": "#586e75",
+      "terminal.ansiBrightBlue": "#839496",
+      "terminal.ansiBrightCyan": "#93a1a1",
+      "terminal.ansiBrightGreen": "#586e75",
+      "terminal.ansiBrightMagenta": "#6c6ec6",
+      "terminal.ansiBrightRed": "#cb4b16",
+      "terminal.ansiBrightWhite": "#fdf6e3",
+      "terminal.ansiBrightYellow": "#657b83",
+      "terminal.ansiCyan": "#2aa198",
+      "terminal.ansiGreen": "#859901",
+      "terminal.ansiMagenta": "#d33682",
+      "terminal.ansiRed": "#dc322f",
+      "terminal.ansiWhite": "#eee8d5",
+      "terminal.ansiYellow": "#b58901",
+      "terminal.selectionBackground": "#003541"
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.javascript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
+}

@@ -1,0 +1,8 @@
+---
+# https://www.imore.com/how-use-sudo-your-mac-touch-id
+- name: Make sudo use touch ID
+  lineinfile:
+    path: /etc/pam.d/sudo
+    line: "auth       sufficient     pam_tid.so"
+    insertafter: ".*?pam_smartcard.so$"
+  become: true
