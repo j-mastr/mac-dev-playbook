@@ -1,0 +1,9 @@
+---
+- name: Install global Yarn packages.
+  community.general.yarn:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('latest') }}"
+    version: "{{ item.version | default(omit) }}"
+    global: true
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ yarn_packages }}"

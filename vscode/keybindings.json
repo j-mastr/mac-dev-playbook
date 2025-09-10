@@ -1,0 +1,37 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "alt1+right",
+        "command": "cursorWordPartRight",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt1+shift+right",
+        "command": "cursorWordPartRightSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt1+left",
+        "command": "cursorWordPartLeft",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt1+shift+left",
+        "command": "cursorWordPartLeftSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt1+backspace",
+        "command": "deleteWordPartLeft",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "alt1+shift+backspace",
+        "command": "deleteWordPartRight",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+cmd+g ctrl+cmd+c",
+        "command": "git.checkout"
+    }
+]

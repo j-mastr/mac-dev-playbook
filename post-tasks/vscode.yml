@@ -1,0 +1,35 @@
+---
+- name: Configure VSCodium
+  when: configure_vscode
+  tags: ['vscode']
+  block:
+  - set_fact:
+      outer_dotfiles_repo: "{{ dotfiles_repo  }}"
+      outer_dotfiles_repo_accept_hostkey: "{{ dotfiles_repo_accept_hostkey  }}"
+      outer_dotfiles_repo_local_destination: "{{ dotfiles_repo_local_destination  }}"
+      outer_dotfiles_repo_version: "{{ dotfiles_repo_version  }}"
+  # - include_role:
+  #     name: geerlingguy.dotfiles
+  #   vars:
+  #     dotfiles_repo: "{{ vscode_repo | default(outer_dotfiles_repo) }}"
+  #     dotfiles_repo_accept_hostkey: "{{ vscode_repo_accept_hostkey | default(outer_dotfiles_repo_accept_hostkey) | default(true) }}"
+  #     dotfiles_repo_local_destination: "{{ vscode_repo_local_destination | default(outer_dotfiles_repo_local_destination) | default('{{ playbook_dir }}') }}"
+  #     dotfiles_repo_version: "{{ vscode_repo_version | default(outer_dotfiles_repo_version) }}"
+  #     dotfiles_home: "{{ vscode_home | default('~/Library/Application Support/VSCodium/User') }}"
+  #     dotfiles_subdir: "{{ vscode_subdir | default('vscode') }}"
+  #     dotfiles_files: "{{ vscode_files | default(['settings.json', 'keybindings.json']) }}"
+  # - command: |
+  #     codium --install-extension
+  - shell: |
+      codium --list-extensions
+    register: vscode_installed_extensions
+  - name: Uninstall vscode extensions
+    shell: |
+      codium --uninstall-extension "{{ item.name | default(item) }}"
+    when: "(item.name | default(item)) in vscode_installed_extensions.stdout and (item.state | default('present')) == 'absent'"
+    loop: "{{ vscode_extensions }}"
+  - name: Install vscode extensions
+    shell: |
+      codium --install-extension "{{ item.name | default(item) }}"
+    when: "(item.name | default(item)) not in vscode_installed_extensions.stdout and (item.state | default('present')) != 'absent'"
+    loop: "{{ vscode_extensions }}"
