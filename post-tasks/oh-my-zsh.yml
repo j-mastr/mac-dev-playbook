@@ -1,6 +1,16 @@
 ---
-- name: Download and install Oh My Zsh
-  shell: |
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" - --unattended --keep-zshrc
-  args:
-    creates: "{{ ansible_env.HOME }}/.oh-my-zsh"
+- name: Configure Oh My ZSH
+  when: configure_ohmyzsh
+  tags: ['ohmyzsh']
+  block:
+    - name: Download and install Oh My Zsh
+      shell: |
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" - --unattended --keep-zshrc
+      args:
+        creates: "{{ ansible_env.HOME }}/.oh-my-zsh"
+    - name: Install custom plugins for Oh My Zsh
+      shell: |
+        git clone --depth 1 {{ item.repo | default("https://github.com/" + (item.name | default(item))) }} ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/{{ item.path | default("plugins/" + ((item.name | default(item)) | basename)) }}
+      args:
+        creates: "{{ ansible_env.ZSH_CUSTOM | default('~/.oh-my-zsh/custom') }}/{{ item.path | default('plugins/' + ((item.name | default(item)) | basename)) }}"
+      loop: "{{ omz_custom_plugins }}"
