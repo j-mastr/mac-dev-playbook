@@ -34,7 +34,7 @@ setopt hist_reduce_blanks
 setopt inc_append_history
 setopt share_history
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#2F4F4F"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180' # or #2F4F4F for dark gray / 60 for dark / 90 for normal / 180 for light
 
 zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
