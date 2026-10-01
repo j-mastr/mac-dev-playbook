@@ -33,5 +33,15 @@
     {
         "key": "ctrl+cmd+g ctrl+cmd+c",
         "command": "git.checkout"
+    },
+    {
+        "key": "ctrl+cmd+g ctrl+cmd+p",
+        "command": "git.pull",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+cmd+g ctrl+cmd+f",
+        "command": "git.fetch",
+        "when": "!operationInProgress"
     }
 ]
