@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/janik/.docker/bin"
+# End of Docker Desktop section.
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export NVM_DIR="$HOME/.nvm"
@@ -9,10 +13,15 @@ export PATH=/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:/usr/local/bin:/usr/l
 # To use Java:
 # export JAVA_HOME=`/usr/libexec/java_home -v 23`
 
+# Disable Docker "What's next" spam
+export DOCKER_CLI_HINTS=false
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
+HIST_IGNORE_SPACE=1
+HISTCONTROL=ignorespace
 setopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -33,6 +42,7 @@ setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt inc_append_history
 setopt share_history
+setopt HIST_IGNORE_SPACE
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180' # or #2F4F4F for dark gray / 60 for dark / 90 for normal / 180 for light
 
