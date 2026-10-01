@@ -6,3 +6,5 @@ Thumbs.db
 .private-notes
 .dependencies
 .gitignore-*
+
+**/.claude/settings.local.json
